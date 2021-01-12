@@ -5,7 +5,7 @@ Created on Tue Nov 24 11:33:17 2020
 @author: Philippine
 """
 import numpy as np
-from numpy.fft import fft
+from numpy.fft import fft, fftshift
 from scipy.io import wavfile
 import matplotlib.pyplot as plt
 
@@ -45,6 +45,7 @@ plt.plot(freq, np.abs(coefs))
 ##Si on veut zoomer sur le fondamental, on ne va s'intéresser qu'à l'intervalle 200-400Hz.
 ##Il faut donc récupérer les indices des fréquences correspondantes
 
+## np.where renvoi des indices
 ind200_400 = np.where((200 <= freq) == (freq <= 400))[0]
 
 freq_zoom = freq[ind200_400]
