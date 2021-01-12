@@ -35,6 +35,7 @@ res = np.dot(Mat_inv,c).real        #valeurs du signal (ne prend que la partie r
 from numpy.fft import fft,ifft
 
 valeurs = 9*ifft(c).real
+coef = (1/9)*fft(valeurs)
 
 #on aurait aussi c = (1/9)*fft(valeurs)
 
