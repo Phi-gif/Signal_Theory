@@ -50,6 +50,7 @@ samplerate, data = wavfile.read(wav_file)
 
 #Question 4
 ##Construction du ndarray u
+##Correspond à un filtre qui crée de l'écho
 
 u = np.zeros(100001) #de type float64
 for i in range(1,len(u)):
@@ -57,8 +58,10 @@ for i in range(1,len(u)):
         u[i] = (20000/i)**2
         
 conv = np.convolve(data,u) #conv de type float64 avec 121554 valeurs
+#signal filtré
 
 #Question 5 
+##Normalisation de conv pour pouvoir l'écrire dans un fichier wav et entendre quelque chose
 M_obs = max(conv)
 m_obs = min(conv)
 
